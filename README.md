@@ -1,10 +1,8 @@
-البته، در اینجا نسخه نهایی فایل `README.md` شما آمده است:
 
-```markdown
-# SPHINCS Post-Quantum Cryptography Project
 
-This project implements the SPHINCS post-quantum cryptographic algorithm using Node.js. It includes a native addon that
-enables high-performance cryptographic operations across various platforms.
+# SPHINCS+ Post-Quantum Cryptography Project
+
+This project implements the SPHINCS+ post-quantum cryptographic algorithm using Node.js. It includes a native addon written in C/C++ for high-performance cryptographic operations across various platforms, ensuring security against quantum computer attacks.
 
 ## Table of Contents
 
@@ -35,9 +33,11 @@ const sphincs = require('path_to_your_module');
 
 // Example of signing a message
 const message = "Hello, Quantum World!";
+const privateKey = "your_private_key"; // Load or generate your SPHINCS+ private key
 const signature = sphincs.signMessage(message, privateKey);
 
 // Example of verifying a signature
+const publicKey = "your_public_key"; // Load or generate your SPHINCS+ public key
 const isValid = sphincs.verifySignature(message, signature, publicKey);
 console.log(`Signature valid: ${isValid}`);
 ```
@@ -67,23 +67,19 @@ These commands ensure that your build environment is clean and that tests are ex
 
 ## Rebuilding Prebuilt Binaries
 
-This project uses `prebuild` to create prebuilt binaries for various Node.js versions and platforms. To generate these
-binaries, use the following commands:
+This project uses `prebuild` to create prebuilt binaries for various Node.js versions and platforms. To generate these binaries, use the following commands:
 
 ### Linux and macOS:
-
 ```bash
 npx prebuild --napi --target 10.0.0 --target 10.6.0 --target 12.11.0 --target 14.0.0 --target 16.0.0 --arch x64 --arch arm64 --strip --verbose
 ```
 
 ### Windows:
-
 ```bash
 npx prebuild --napi --target 10.0.0 --target 10.6.0 --target 12.11.0 --target 14.0.0 --target 16.0.0 --arch x64 --arch arm64 --platform win32 --strip --verbose
 ```
 
 ### macOS:
-
 ```bash
 npx prebuild --napi --target 10.0.0 --target 10.6.0 --target 12.11.0 --target 14.0.0 --target 16.0.0 --arch x64 --arch arm64 --platform darwin --strip --verbose
 ```
@@ -94,9 +90,9 @@ These commands will create prebuilt binaries compatible with multiple Node.js ve
 
 This project supports multiple platforms, including:
 
-- Linux (x64, ARM64)
-- macOS (x64, ARM64)
-- Windows (x64, ARM64)
+- **Linux (x64, ARM64)**
+- **macOS (x64, ARM64)**
+- **Windows (x64, ARM64)**
 
 The prebuilt binaries are optimized for different environments to ensure performance and compatibility.
 
@@ -104,13 +100,31 @@ The prebuilt binaries are optimized for different environments to ensure perform
 
 We welcome contributions from the community! If you would like to contribute, please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature-name`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature/your-feature-name`).
-6. Open a pull request.
+1. **Fork the repository.**
+2. **Create a new branch:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make your changes.**
+4. **Commit your changes:**
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+5. **Push to the branch:**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+6. **Open a pull request.**
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
 ## Resources
 
-- **GitHub Repository:** [SPHINCS Project](https://github.com/mostafa18181/sphincs)
+- **GitHub Repository**: [SPHINCS+ Project](https://github.com/your-repository-url)
+
+---
+
+
+
